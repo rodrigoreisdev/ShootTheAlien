@@ -117,16 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>1. Cadastre os jogadores
-2. Clique em iniciar
-3. Selecione o jogador que irá jogar
-4. Dentro de 1 minuto, atire nas imagens que são mostradas
-5. Se aparecer o Alien malvado, você ganha 1 ponto
-6. Se aparecer o Alf, você perde 1 ponto
-7. Se não aparecer nada, você não perde nem ganha</value>
-  </data>
 </root>

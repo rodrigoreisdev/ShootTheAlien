@@ -12,9 +12,31 @@ namespace ShootTheAlien
 {
     public partial class frmCadastro : Form
     {
-        public frmCadastro()
+        List<Jogador> listaJogadores;
+        Jogador jog;
+        public frmCadastro(List<Jogador> LJ)
         {
+            listaJogadores = LJ;
             InitializeComponent();
+        }
+
+        private void frmCadastro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string nome;
+            nome = txtNome.Text;
+            jog = new Jogador(nome);
+            listaJogadores.Add(jog);
+            txtNome.Clear();
         }
     }
 }

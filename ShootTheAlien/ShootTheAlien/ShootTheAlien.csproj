@@ -52,19 +52,39 @@
     <Compile Include="frmCadastro.Designer.cs">
       <DependentUpon>frmCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmJogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJogo.Designer.cs">
+      <DependentUpon>frmJogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSelecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelecao.Designer.cs">
+      <DependentUpon>frmSelecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jogador.cs" />
+    <Compile Include="Jogo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmJogo.resx">
+      <DependentUpon>frmJogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelecao.resx">
+      <DependentUpon>frmSelecao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\backini.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\back2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\backjogo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
