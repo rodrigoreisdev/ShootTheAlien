@@ -39,7 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerSel = new System.Windows.Forms.Timer(this.components);
             this.pnFacil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
@@ -60,7 +60,6 @@
             this.pnFacil.Size = new System.Drawing.Size(1096, 404);
             this.pnFacil.TabIndex = 0;
             this.pnFacil.Visible = false;
-            this.pnFacil.Paint += new System.Windows.Forms.PaintEventHandler(this.pnFacil_Paint);
             // 
             // pb5
             // 
@@ -111,6 +110,7 @@
             this.pb1.Size = new System.Drawing.Size(178, 270);
             this.pb1.TabIndex = 0;
             this.pb1.TabStop = false;
+            this.pb1.Click += new System.EventHandler(this.pb1_Click);
             // 
             // label1
             // 
@@ -143,6 +143,11 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(302, 23);
             this.progressBar1.TabIndex = 4;
+            // 
+            // timerSel
+            // 
+            this.timerSel.Interval = 1000;
+            this.timerSel.Tick += new System.EventHandler(this.timerSel_Tick);
             // 
             // frmJogo
             // 
@@ -182,6 +187,6 @@
         private System.Windows.Forms.PictureBox pb4;
         private System.Windows.Forms.PictureBox pb3;
         private System.Windows.Forms.PictureBox pb2;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerSel;
     }
 }

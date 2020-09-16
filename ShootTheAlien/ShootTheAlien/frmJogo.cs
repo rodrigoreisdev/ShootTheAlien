@@ -13,29 +13,26 @@ namespace ShootTheAlien
     public partial class frmJogo : Form
     {
         Jogo game;
+        int seg = 0;
         public frmJogo(int dif, int tempo)
         {
             game = new Jogo(dif, tempo);
             InitializeComponent();
-            IniciarJogo(1);
+            
         }
 
         public Jogo Game { get => game; set => game = value; }
 
         private void frmJogo_Load(object sender, EventArgs e)
         {
-            
+            pnFacil.Visible = true;
 
-        }
-
-        private void pnFacil_Paint(object sender, PaintEventArgs e)
-        {
-            
         }
 
         void IniciarJogo(int x)
         {
-            pnFacil.Visible = true;
+            Control[] control= { pb1, pb2, pb3, pb4, pb5 };
+            
             int[] marc = new int[3];
             Image[] images = new Image[3];
             images[0] = Properties.Resources.alien; //0- alien
@@ -51,8 +48,35 @@ namespace ShootTheAlien
                 for (int i = 0; i < 5; i++)
                 {
                     int y= rand.Next(3);
-                    pb1.Image = images[y];
+                    control[i].BackgroundImage = images[y];
                 }
+            }
+            timerSel.Enabled = true;
+            timerSel.Start();
+        }
+
+        void Reset()
+        {
+            Control[] control = { pb1, pb2, pb3, pb4, pb5 };
+            for (int i = 0; i < 5; i++)
+            {
+                control[i].BackgroundImage = Properties.Resources.top;
+            }
+        }
+
+        private void pb1_Click(object sender, EventArgs e)
+        {
+            IniciarJogo(1);
+        }
+
+        private void timerSel_Tick(object sender, EventArgs e)
+        {
+            seg++;
+            if (seg == 3)
+            {
+                timerSel.Stop();
+                timerSel.Enabled = false;
+                Reset();
             }
         }
     }
