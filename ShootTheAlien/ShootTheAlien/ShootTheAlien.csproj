@@ -118,5 +118,17 @@
   <ItemGroup>
     <None Include="img\backjogo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\alf.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\alien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\nada.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\top.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

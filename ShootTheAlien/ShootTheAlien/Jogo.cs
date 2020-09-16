@@ -10,6 +10,7 @@ namespace ShootTheAlien
     {
         private int dificuldade;
         private int tempo;
+        
 
         public Jogo(int dificuldade, int tempo)
         {
@@ -19,5 +20,14 @@ namespace ShootTheAlien
 
         public int Dificuldade { get => dificuldade;  }
         public int Tempo { get => tempo; }
+
+        public void Iniciar()
+        {
+            if (dificuldade==1)
+            {
+                
+
+            }
+        }
     }
 }
