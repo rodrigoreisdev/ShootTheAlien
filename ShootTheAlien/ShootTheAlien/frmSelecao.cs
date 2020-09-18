@@ -15,6 +15,7 @@ namespace ShootTheAlien
         List<Jogador> listaJogadores;
         int dif;
         int tempo;
+
         public frmSelecao(List<Jogador> LJ)
         {
             listaJogadores = LJ;
@@ -37,13 +38,7 @@ namespace ShootTheAlien
 
         private void gbNivel_Enter(object sender, EventArgs e)
         {
-            dif = 0;
-            if (rbFacil.Checked)
-                dif = 1;
-            if (rbMedio.Checked)
-                dif = 2;
-            if (rbDificil.Checked)
-                dif = 3;
+            
             gbTempo.Visible = true;
         }
 
@@ -55,6 +50,13 @@ namespace ShootTheAlien
 
         private void cmdOk_Click(object sender, EventArgs e)
         {
+            dif = 0;
+            if (rbFacil.Checked)
+                dif = 1;
+            if (rbMedio.Checked)
+                dif = 2;
+            if (rbDificil.Checked)
+                dif = 3;
             frmJogo jog = new frmJogo(dif,tempo);
             jog.Show();
         }

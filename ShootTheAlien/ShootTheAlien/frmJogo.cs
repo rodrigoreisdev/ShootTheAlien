@@ -13,46 +13,59 @@ namespace ShootTheAlien
     public partial class frmJogo : Form
     {
         Jogo game;
-        int seg = 0;
-        public frmJogo(int dif, int tempo)
-        {
-            game = new Jogo(dif, tempo);
-            InitializeComponent();
-            
-        }
-
+        int seg;
+        int dif;
         public Jogo Game { get => game; set => game = value; }
 
-        private void frmJogo_Load(object sender, EventArgs e)
+        //-------------------------------------Funções-----------------------------------//
+        void IniciarJogo(int[] vet)
         {
-            pnFacil.Visible = true;
-
-        }
-
-        void IniciarJogo(int x)
-        {
-            Control[] control= { pb1, pb2, pb3, pb4, pb5 };
-            
-            int[] marc = new int[3];
-            Image[] images = new Image[3];
-            images[0] = Properties.Resources.alien; //0- alien
-            images[1] = Properties.Resources.alf;   //1- alf
-            images[2] = Properties.Resources.nada;  //2- nada
-            for (int i=0; i < marc.Length; i++)
-                marc[i]= 0;
-
+            seg = 0;
+            Control[] control = { pb1, pb2, pb3, pb4, pb5 };
+            Image[] images = new Image[3] { Properties.Resources.alien, Properties.Resources.alf, Properties.Resources.nada };
             Random rand;
-            if (x==1)
+
+            rand = new Random();
+            int y;
+            //inicio da troca de imagens
+            foreach (Control item in pnFacil.Controls)
             {
-                rand = new Random();
-                for (int i = 0; i < 5; i++)
-                {
-                    int y= rand.Next(3);
-                    control[i].BackgroundImage = images[y];
-                }
+
+                y = rand.Next(3);
+                while (vet[y] == 0)
+                    y = rand.Next(3);
+
+                item.BackgroundImage = images[y];
+                vet[y]--;
             }
+            //fim da troca, inicio do temporizador
             timerSel.Enabled = true;
             timerSel.Start();
+        }
+
+        void Atirar(int dif)
+        {
+            int[] marc = new int[3];
+            if (dif == 1)
+            {
+                marc[0] = 2;
+                marc[1] = 1;
+                marc[2] = 2;
+            }
+            if (dif == 2)
+            {
+                marc[0] = 1;
+                marc[1] = 1;
+                marc[2] = 3;
+            }
+            if (dif == 3)
+            {
+                marc[0] = 1;
+                marc[1] = 2;
+                marc[2] = 2;
+            }
+
+            IniciarJogo(marc);
         }
 
         void Reset()
@@ -63,14 +76,29 @@ namespace ShootTheAlien
                 control[i].BackgroundImage = Properties.Resources.top;
             }
         }
+        //-----------------------------------------------------Form-------------------------------------------//
+        public frmJogo(int dif, int tempo)
+        {
+            game = new Jogo(dif, tempo);
+            InitializeComponent();
+
+        }
+
+        private void frmJogo_Load(object sender, EventArgs e)
+        {
+            pnFacil.Visible = true;
+            dif = game.Dificuldade;
+
+        }
 
         private void pb1_Click(object sender, EventArgs e)
         {
-            IniciarJogo(1);
+            Atirar(dif);
         }
 
         private void timerSel_Tick(object sender, EventArgs e)
         {
+            //temporizador
             seg++;
             if (seg == 3)
             {
