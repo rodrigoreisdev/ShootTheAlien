@@ -13,38 +13,17 @@ namespace ShootTheAlien
     public partial class frmJogo : Form
     {
         Jogo game;
+        Jogador player;
         int seg;
         int dif;
+        List<Jogador> listaJogadores;
         public Jogo Game { get => game; set => game = value; }
 
+
         //-------------------------------------Funções-----------------------------------//
-        void IniciarJogo(int[] vet)
+        void Atirar(int dif, Control pb)
         {
-            seg = 0;
-            Control[] control = { pb1, pb2, pb3, pb4, pb5 };
-            Image[] images = new Image[3] { Properties.Resources.alien, Properties.Resources.alf, Properties.Resources.nada };
-            Random rand;
-
-            rand = new Random();
-            int y;
-            //inicio da troca de imagens
-            foreach (Control item in pnFacil.Controls)
-            {
-
-                y = rand.Next(3);
-                while (vet[y] == 0)
-                    y = rand.Next(3);
-
-                item.BackgroundImage = images[y];
-                vet[y]--;
-            }
-            //fim da troca, inicio do temporizador
-            timerSel.Enabled = true;
-            timerSel.Start();
-        }
-
-        void Atirar(int dif)
-        {
+            //quantidade de vezes de cada imagem //0 - alien   1 - alf   2 - nada
             int[] marc = new int[3];
             if (dif == 1)
             {
@@ -65,21 +44,72 @@ namespace ShootTheAlien
                 marc[2] = 2;
             }
 
-            IniciarJogo(marc);
+            IniciarJogo(marc, pb);
         }
+
+        void IniciarJogo(int[] vet, Control pb)
+        {
+            seg = 0;
+            Image[] images = new Image[3] { Properties.Resources.alien, Properties.Resources.alf, Properties.Resources.nada };
+            Random rand;
+
+            rand = new Random();
+            int y;
+
+            //inicio da troca de imagens
+            foreach (Control item in pnFacil.Controls)
+            {
+
+                y = rand.Next(3);
+                while (vet[y] == 0)
+                    y = rand.Next(3);
+
+                item.BackgroundImage = images[y];
+                vet[y]--;
+            }
+
+            Comparar(pb);
+
+            //fim da troca, inicio do temporizador
+            timerSel.Enabled = true;
+            timerSel.Start();
+        }
+
+        //Comparação de imagens
+        void Comparar(Control pb)
+        {
+            if (pb.BackgroundImage == Properties.Resources.alien)
+            {
+                prbNivel.Value++;
+                lblAcerto.Text = "Você acertou!";
+            }
+            else
+            {
+                if(prbNivel.Value!=0)
+                {
+                    prbNivel.Value--;
+                    lblAcerto.ForeColor = Color.Red;
+                    lblAcerto.Text = "Você Errou!";
+                }
+            }
+        }
+
 
         void Reset()
         {
-            Control[] control = { pb1, pb2, pb3, pb4, pb5 };
-            for (int i = 0; i < 5; i++)
+            foreach(Control item in pnFacil.Controls)
             {
-                control[i].BackgroundImage = Properties.Resources.top;
+                item.BackgroundImage = Properties.Resources.top;
             }
         }
+
+
         //-----------------------------------------------------Form-------------------------------------------//
-        public frmJogo(int dif, int tempo)
+        public frmJogo(int dif, int tempo, List<Jogador> listaJogadores, int ind)
         {
             game = new Jogo(dif, tempo);
+            this.listaJogadores = listaJogadores;
+            player = listaJogadores[ind];
             InitializeComponent();
 
         }
@@ -88,24 +118,58 @@ namespace ShootTheAlien
         {
             pnFacil.Visible = true;
             dif = game.Dificuldade;
+            seg = game.Tempo*60;
+            prbTempo.Maximum = game.Tempo * 60;
+            lblNivel.Text = "Nível: " + player.Nivel.ToString();
+            timerTempo.Start();
 
-        }
-
-        private void pb1_Click(object sender, EventArgs e)
-        {
-            Atirar(dif);
         }
 
         private void timerSel_Tick(object sender, EventArgs e)
         {
             //temporizador
             seg++;
-            if (seg == 3)
+            if (seg == 10)
             {
                 timerSel.Stop();
                 timerSel.Enabled = false;
                 Reset();
             }
+        }
+
+        private void timerTempo_Tick(object sender, EventArgs e)
+        {
+            //tempo de jogo
+            if (prbTempo.Value == prbTempo.Maximum)
+                timerTempo.Stop();
+            else
+                prbTempo.Value++;
+            seg--;
+        }
+
+        private void pb1_Click(object sender, EventArgs e)
+        {
+            Atirar(dif,pb1);
+        }
+
+        private void pb2_Click(object sender, EventArgs e)
+        {
+            Atirar(dif,pb2);
+        }
+
+        private void pb3_Click(object sender, EventArgs e)
+        {
+            Atirar(dif,pb3);
+        }
+
+        private void pb4_Click(object sender, EventArgs e)
+        {
+            Atirar(dif,pb4);
+        }
+
+        private void pb5_Click(object sender, EventArgs e)
+        {
+            Atirar(dif,pb5);
         }
     }
 }

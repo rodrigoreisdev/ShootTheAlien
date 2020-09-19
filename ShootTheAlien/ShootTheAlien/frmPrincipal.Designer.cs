@@ -50,10 +50,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Ink Free", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(22, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(33, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(480, 79);
+            this.label1.Size = new System.Drawing.Size(712, 118);
             this.label1.TabIndex = 0;
             this.label1.Text = "Shoot the Allien";
             // 
@@ -67,33 +66,32 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // rankingToolStripMenuItem
             // 
             this.rankingToolStripMenuItem.Name = "rankingToolStripMenuItem";
-            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(62, 22);
+            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
             this.rankingToolStripMenuItem.Text = "Ranking";
             // 
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(60, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
             this.cadastrarToolStripMenuItem.Text = "História";
             // 
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(75, 29);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(57, 29);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
             // cmdIniciar
@@ -102,10 +100,9 @@
             this.cmdIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdIniciar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cmdIniciar.Location = new System.Drawing.Point(35, 161);
-            this.cmdIniciar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdIniciar.Location = new System.Drawing.Point(52, 248);
             this.cmdIniciar.Name = "cmdIniciar";
-            this.cmdIniciar.Size = new System.Drawing.Size(203, 54);
+            this.cmdIniciar.Size = new System.Drawing.Size(304, 83);
             this.cmdIniciar.TabIndex = 2;
             this.cmdIniciar.Text = "Iniciar";
             this.cmdIniciar.UseVisualStyleBackColor = false;
@@ -117,10 +114,9 @@
             this.cmdRegras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdRegras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRegras.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cmdRegras.Location = new System.Drawing.Point(35, 287);
-            this.cmdRegras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdRegras.Location = new System.Drawing.Point(52, 442);
             this.cmdRegras.Name = "cmdRegras";
-            this.cmdRegras.Size = new System.Drawing.Size(134, 36);
+            this.cmdRegras.Size = new System.Drawing.Size(201, 55);
             this.cmdRegras.TabIndex = 2;
             this.cmdRegras.Text = "Regras";
             this.cmdRegras.UseVisualStyleBackColor = false;
@@ -131,10 +127,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(125, 400);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(188, 615);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(542, 181);
+            this.panel1.Size = new System.Drawing.Size(811, 336);
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
             // 
@@ -144,10 +139,9 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.richTextBox1.Location = new System.Drawing.Point(51, 11);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Location = new System.Drawing.Point(76, 17);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(449, 159);
+            this.richTextBox1.Size = new System.Drawing.Size(674, 245);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -157,10 +151,9 @@
             this.cmdCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCadastro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cmdCadastro.Location = new System.Drawing.Point(35, 233);
-            this.cmdCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdCadastro.Location = new System.Drawing.Point(52, 358);
             this.cmdCadastro.Name = "cmdCadastro";
-            this.cmdCadastro.Size = new System.Drawing.Size(167, 36);
+            this.cmdCadastro.Size = new System.Drawing.Size(250, 55);
             this.cmdCadastro.TabIndex = 2;
             this.cmdCadastro.Text = "Cadastro";
             this.cmdCadastro.UseVisualStyleBackColor = false;
@@ -168,11 +161,11 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ShootTheAlien.Properties.Resources.backini;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(856, 487);
+            this.ClientSize = new System.Drawing.Size(1284, 963);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmdCadastro);
             this.Controls.Add(this.cmdRegras);
@@ -181,7 +174,6 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPrincipal";
             this.Text = "Shoot  the Allien!";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

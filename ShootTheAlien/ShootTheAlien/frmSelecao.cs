@@ -15,6 +15,7 @@ namespace ShootTheAlien
         List<Jogador> listaJogadores;
         int dif;
         int tempo;
+        int indice;
 
         public frmSelecao(List<Jogador> LJ)
         {
@@ -34,6 +35,8 @@ namespace ShootTheAlien
         private void lbNomes_SelectedIndexChanged(object sender, EventArgs e)
         {
             gbNivel.Visible = true;
+            indice = lbNomes.SelectedIndex;
+
         }
 
         private void gbNivel_Enter(object sender, EventArgs e)
@@ -57,7 +60,7 @@ namespace ShootTheAlien
                 dif = 2;
             if (rbDificil.Checked)
                 dif = 3;
-            frmJogo jog = new frmJogo(dif,tempo);
+            frmJogo jog = new frmJogo(dif,tempo,listaJogadores,indice);
             jog.Show();
         }
     }

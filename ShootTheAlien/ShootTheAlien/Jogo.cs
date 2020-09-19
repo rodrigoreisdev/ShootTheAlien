@@ -21,13 +21,6 @@ namespace ShootTheAlien
         public int Dificuldade { get => dificuldade;  }
         public int Tempo { get => tempo; }
 
-        public void Iniciar()
-        {
-            if (dificuldade==1)
-            {
-                
-
-            }
-        }
+       
     }
 }

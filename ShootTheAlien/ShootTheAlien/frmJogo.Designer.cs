@@ -35,11 +35,12 @@
             this.pb3 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
             this.pb1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.prbNivel = new System.Windows.Forms.ProgressBar();
+            this.prbTempo = new System.Windows.Forms.ProgressBar();
             this.timerSel = new System.Windows.Forms.Timer(this.components);
+            this.timerTempo = new System.Windows.Forms.Timer(this.components);
+            this.lblAcerto = new System.Windows.Forms.Label();
             this.pnFacil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
@@ -70,6 +71,7 @@
             this.pb5.Size = new System.Drawing.Size(178, 270);
             this.pb5.TabIndex = 0;
             this.pb5.TabStop = false;
+            this.pb5.Click += new System.EventHandler(this.pb5_Click);
             // 
             // pb4
             // 
@@ -80,6 +82,7 @@
             this.pb4.Size = new System.Drawing.Size(178, 270);
             this.pb4.TabIndex = 0;
             this.pb4.TabStop = false;
+            this.pb4.Click += new System.EventHandler(this.pb4_Click);
             // 
             // pb3
             // 
@@ -90,6 +93,7 @@
             this.pb3.Size = new System.Drawing.Size(178, 270);
             this.pb3.TabIndex = 0;
             this.pb3.TabStop = false;
+            this.pb3.Click += new System.EventHandler(this.pb3_Click);
             // 
             // pb2
             // 
@@ -100,6 +104,7 @@
             this.pb2.Size = new System.Drawing.Size(178, 270);
             this.pb2.TabIndex = 0;
             this.pb2.TabStop = false;
+            this.pb2.Click += new System.EventHandler(this.pb2_Click);
             // 
             // pb1
             // 
@@ -112,42 +117,55 @@
             this.pb1.TabStop = false;
             this.pb1.Click += new System.EventHandler(this.pb1_Click);
             // 
-            // label1
+            // lblNivel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1159, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.lblNivel.AutoSize = true;
+            this.lblNivel.BackColor = System.Drawing.Color.Transparent;
+            this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNivel.Location = new System.Drawing.Point(153, 29);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.Size = new System.Drawing.Size(76, 26);
+            this.lblNivel.TabIndex = 3;
+            this.lblNivel.Text = "label2";
             // 
-            // label2
+            // prbNivel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(153, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.prbNivel.Location = new System.Drawing.Point(153, 68);
+            this.prbNivel.Maximum = 10;
+            this.prbNivel.Name = "prbNivel";
+            this.prbNivel.Size = new System.Drawing.Size(302, 23);
+            this.prbNivel.TabIndex = 4;
             // 
-            // progressBar2
+            // prbTempo
             // 
-            this.progressBar2.Location = new System.Drawing.Point(153, 68);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(302, 23);
-            this.progressBar2.TabIndex = 4;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(908, 68);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(302, 23);
-            this.progressBar1.TabIndex = 4;
+            this.prbTempo.Location = new System.Drawing.Point(908, 68);
+            this.prbTempo.Name = "prbTempo";
+            this.prbTempo.Size = new System.Drawing.Size(302, 23);
+            this.prbTempo.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prbTempo.TabIndex = 4;
             // 
             // timerSel
             // 
-            this.timerSel.Interval = 1000;
             this.timerSel.Tick += new System.EventHandler(this.timerSel_Tick);
+            // 
+            // timerTempo
+            // 
+            this.timerTempo.Enabled = true;
+            this.timerTempo.Interval = 1000;
+            this.timerTempo.Tick += new System.EventHandler(this.timerTempo_Tick);
+            // 
+            // lblAcerto
+            // 
+            this.lblAcerto.AutoSize = true;
+            this.lblAcerto.BackColor = System.Drawing.Color.Transparent;
+            this.lblAcerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcerto.ForeColor = System.Drawing.Color.Green;
+            this.lblAcerto.Location = new System.Drawing.Point(566, 655);
+            this.lblAcerto.Name = "lblAcerto";
+            this.lblAcerto.Size = new System.Drawing.Size(99, 32);
+            this.lblAcerto.TabIndex = 5;
+            this.lblAcerto.Text = "label1";
             // 
             // frmJogo
             // 
@@ -155,11 +173,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ShootTheAlien.Properties.Resources.backjogo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.progressBar2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1370, 797);
+            this.Controls.Add(this.lblAcerto);
+            this.Controls.Add(this.prbTempo);
+            this.Controls.Add(this.prbNivel);
+            this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.pnFacil);
             this.Name = "frmJogo";
             this.Text = "Shoot the Alien";
@@ -179,14 +197,15 @@
 
         private System.Windows.Forms.Panel pnFacil;
         private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lblNivel;
+        private System.Windows.Forms.ProgressBar prbNivel;
+        private System.Windows.Forms.ProgressBar prbTempo;
         private System.Windows.Forms.PictureBox pb5;
         private System.Windows.Forms.PictureBox pb4;
         private System.Windows.Forms.PictureBox pb3;
         private System.Windows.Forms.PictureBox pb2;
         private System.Windows.Forms.Timer timerSel;
+        private System.Windows.Forms.Timer timerTempo;
+        private System.Windows.Forms.Label lblAcerto;
     }
 }
