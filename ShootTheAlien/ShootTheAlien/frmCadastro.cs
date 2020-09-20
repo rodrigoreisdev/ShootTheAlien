@@ -25,10 +25,7 @@ namespace ShootTheAlien
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,7 +33,13 @@ namespace ShootTheAlien
             nome = txtNome.Text;
             jog = new Jogador(nome);
             listaJogadores.Add(jog);
+            MessageBox.Show("Cadastro Efetuado com sucesso!");
             txtNome.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

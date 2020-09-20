@@ -15,9 +15,10 @@ namespace ShootTheAlien
         Jogo game;
         Jogador player;
         int seg;
+        int seg2;
         int dif;
         List<Jogador> listaJogadores;
-        public Jogo Game { get => game; set => game = value; }
+ 
 
 
         //-------------------------------------Funções-----------------------------------//
@@ -52,6 +53,7 @@ namespace ShootTheAlien
             seg = 0;
             Image[] images = new Image[3] { Properties.Resources.alien, Properties.Resources.alf, Properties.Resources.nada };
             Random rand;
+            string[] tag = new string[3] { "Alien", "Alf", "Nada" };
 
             rand = new Random();
             int y;
@@ -65,6 +67,7 @@ namespace ShootTheAlien
                     y = rand.Next(3);
 
                 item.BackgroundImage = images[y];
+                item.Tag = tag[y];
                 vet[y]--;
             }
 
@@ -78,31 +81,48 @@ namespace ShootTheAlien
         //Comparação de imagens
         void Comparar(Control pb)
         {
-            if (pb.BackgroundImage == Properties.Resources.alien)
+
+            if (pb.Tag.ToString() == "Alien")
             {
                 prbNivel.Value++;
-                lblAcerto.Text = "Você acertou!";
+                player.Pontos++;
+                lblAcerto.ForeColor = Color.Green;
+                lblAcerto.Text = "Bom tiro!";
             }
-            else
+            if (pb.Tag.ToString() == "Alf")
             {
                 if(prbNivel.Value!=0)
                 {
                     prbNivel.Value--;
-                    lblAcerto.ForeColor = Color.Red;
-                    lblAcerto.Text = "Você Errou!";
+                    player.Pontos--;
                 }
+                lblAcerto.ForeColor = Color.Red;
+                lblAcerto.Text = "Você acertou o Alf!";
+            }
+            if (pb.Tag.ToString() == "Nada")
+            {
+                lblAcerto.ForeColor = Color.White;
+                lblAcerto.Text = "Errou!";
             }
         }
 
-
+        //Voltar ao original
         void Reset()
         {
             foreach(Control item in pnFacil.Controls)
             {
                 item.BackgroundImage = Properties.Resources.top;
+                item.Tag = "";
             }
         }
 
+        //Termino do jogo
+        void Terminar()
+        {
+            pnFacil.Enabled = false;
+            MessageBox.Show("Jogo Terminado");
+            this.Close();
+        }
 
         //-----------------------------------------------------Form-------------------------------------------//
         public frmJogo(int dif, int tempo, List<Jogador> listaJogadores, int ind)
@@ -118,9 +138,9 @@ namespace ShootTheAlien
         {
             pnFacil.Visible = true;
             dif = game.Dificuldade;
-            seg = game.Tempo*60;
+            seg2 = game.Tempo*60;
             prbTempo.Maximum = game.Tempo * 60;
-            lblNivel.Text = "Nível: " + player.Nivel.ToString();
+            prbNivel.Value = player.Pontos % 10;
             timerTempo.Start();
 
         }
@@ -141,10 +161,18 @@ namespace ShootTheAlien
         {
             //tempo de jogo
             if (prbTempo.Value == prbTempo.Maximum)
+            {
                 timerTempo.Stop();
+                Terminar();
+            }
             else
                 prbTempo.Value++;
-            seg--;
+            if (prbNivel.Value == 10) 
+            {
+                prbNivel.Value = 0;
+            }
+            lblNivel.Text = "Nível: " + player.Nivel.ToString();
+            seg2--;
         }
 
         private void pb1_Click(object sender, EventArgs e)

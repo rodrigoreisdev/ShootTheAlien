@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelecao));
             this.lbNomes = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbNivel = new System.Windows.Forms.GroupBox();
@@ -150,10 +151,9 @@
             // cbTempo
             // 
             this.cbTempo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbTempo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTempo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTempo.ForeColor = System.Drawing.SystemColors.Control;
-            this.cbTempo.FormattingEnabled = true;
             this.cbTempo.Items.AddRange(new object[] {
             "1",
             "2",
@@ -210,6 +210,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbNomes);
             this.Controls.Add(this.gbTempo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSelecao";
             this.Text = "Seleção de Personagem";
             this.Load += new System.EventHandler(this.frmSelecao_Load);

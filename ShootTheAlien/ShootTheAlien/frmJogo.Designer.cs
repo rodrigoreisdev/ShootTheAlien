@@ -41,6 +41,7 @@
             this.timerSel = new System.Windows.Forms.Timer(this.components);
             this.timerTempo = new System.Windows.Forms.Timer(this.components);
             this.lblAcerto = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnFacil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
@@ -51,6 +52,7 @@
             // 
             // pnFacil
             // 
+            this.pnFacil.BackColor = System.Drawing.Color.Transparent;
             this.pnFacil.Controls.Add(this.pb5);
             this.pnFacil.Controls.Add(this.pb4);
             this.pnFacil.Controls.Add(this.pb3);
@@ -110,7 +112,7 @@
             // 
             this.pb1.BackgroundImage = global::ShootTheAlien.Properties.Resources.top;
             this.pb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pb1.Location = new System.Drawing.Point(60, 67);
+            this.pb1.Location = new System.Drawing.Point(55, 67);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(178, 270);
             this.pb1.TabIndex = 0;
@@ -121,13 +123,13 @@
             // 
             this.lblNivel.AutoSize = true;
             this.lblNivel.BackColor = System.Drawing.Color.Transparent;
-            this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNivel.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNivel.Location = new System.Drawing.Point(153, 29);
             this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(76, 26);
+            this.lblNivel.Size = new System.Drawing.Size(84, 32);
             this.lblNivel.TabIndex = 3;
-            this.lblNivel.Text = "label2";
+            this.lblNivel.Text = "Nível";
             // 
             // prbNivel
             // 
@@ -163,9 +165,20 @@
             this.lblAcerto.ForeColor = System.Drawing.Color.Green;
             this.lblAcerto.Location = new System.Drawing.Point(566, 655);
             this.lblAcerto.Name = "lblAcerto";
-            this.lblAcerto.Size = new System.Drawing.Size(99, 32);
+            this.lblAcerto.Size = new System.Drawing.Size(0, 32);
             this.lblAcerto.TabIndex = 5;
-            this.lblAcerto.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(1102, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 32);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tempo";
             // 
             // frmJogo
             // 
@@ -177,10 +190,15 @@
             this.Controls.Add(this.lblAcerto);
             this.Controls.Add(this.prbTempo);
             this.Controls.Add(this.prbNivel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.pnFacil);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmJogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shoot the Alien";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmJogo_Load);
             this.pnFacil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
@@ -207,5 +225,6 @@
         private System.Windows.Forms.Timer timerSel;
         private System.Windows.Forms.Timer timerTempo;
         private System.Windows.Forms.Label lblAcerto;
+        private System.Windows.Forms.Label label1;
     }
 }

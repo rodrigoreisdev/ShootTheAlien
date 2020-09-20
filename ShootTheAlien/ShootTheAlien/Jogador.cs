@@ -20,5 +20,12 @@ namespace ShootTheAlien
         public string Nome { get => nome; }
         public int Pontos { get => pontos; set => pontos = value; }
         public int Nivel { get => (pontos / 10) + 1; }
+
+        public string Mostra()
+        {
+            string aux="";
+            aux = nome + "\t\t" + pontos + " pontos" + "\t\t" + "Nível: " + Nivel;
+            return aux;
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastro));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -77,7 +78,7 @@
             this.button2.Location = new System.Drawing.Point(655, 371);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 47);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Sair";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -93,6 +94,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastro";
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.frmCadastro_Load);
