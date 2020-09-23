@@ -17,7 +17,6 @@ namespace ShootTheAlien
         int seg;
         int seg2;
         int dif;
-        List<Jogador> listaJogadores;
  
 
 
