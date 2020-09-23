@@ -84,7 +84,7 @@ namespace ShootTheAlien
             if (pb.Tag.ToString() == "Alien")
             {
                 prbNivel.Value++;
-                player.Pontos++;
+                game.Pontos++;
                 lblAcerto.ForeColor = Color.Green;
                 lblAcerto.Text = "Bom tiro!";
             }
@@ -93,7 +93,7 @@ namespace ShootTheAlien
                 if(prbNivel.Value!=0)
                 {
                     prbNivel.Value--;
-                    player.Pontos--;
+                    game.Pontos--;
                 }
                 lblAcerto.ForeColor = Color.Red;
                 lblAcerto.Text = "Você acertou o Alf!";
@@ -120,7 +120,9 @@ namespace ShootTheAlien
         {
             pnFacil.Enabled = false;
             MessageBox.Show("Jogo Terminado");
-            this.Close();
+            frmFim frm = new frmFim(player.Nome,game.Pontos);
+            player.Pontos = game.Pontos;
+            frm.Show();
         }
 
         //-----------------------------------------------------Form-------------------------------------------//
@@ -169,7 +171,7 @@ namespace ShootTheAlien
             {
                 prbNivel.Value = 0;
             }
-            lblNivel.Text = "Nível: " + player.Nivel.ToString();
+            lblNivel.Text = "Nível: " + ((game.Pontos/10)+1);
             seg2--;
         }
 

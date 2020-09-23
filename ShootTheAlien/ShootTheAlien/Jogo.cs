@@ -10,6 +10,7 @@ namespace ShootTheAlien
     {
         private int dificuldade;
         private int tempo;
+        private int pontos;
         
 
         public Jogo(int dificuldade, int tempo)
@@ -20,7 +21,6 @@ namespace ShootTheAlien
 
         public int Dificuldade { get => dificuldade;  }
         public int Tempo { get => tempo; }
-
-       
+        public int Pontos { get => pontos; set => pontos = value; }
     }
 }
