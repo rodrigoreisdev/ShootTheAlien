@@ -60,7 +60,7 @@ namespace ShootTheAlien
                 dif = 2;
             if (rbDificil.Checked)
                 dif = 3;
-            frmJogo jog = new frmJogo(dif,tempo,listaJogadores,indice);
+            frmJogo jog = new frmJogo(dif,tempo,listaJogadores[indice]);
             jog.Show();
         }
     }

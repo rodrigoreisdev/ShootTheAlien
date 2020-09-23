@@ -46,6 +46,7 @@
             this.lsbJogadores.Name = "lsbJogadores";
             this.lsbJogadores.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lsbJogadores.Size = new System.Drawing.Size(641, 551);
+            this.lsbJogadores.Sorted = true;
             this.lsbJogadores.TabIndex = 0;
             // 
             // label1
