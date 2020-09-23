@@ -17,7 +17,6 @@ namespace ShootTheAlien
         int seg;
         int seg2;
         int dif;
-        List<Jogador> listaJogadores;
  
 
 
@@ -125,11 +124,10 @@ namespace ShootTheAlien
         }
 
         //-----------------------------------------------------Form-------------------------------------------//
-        public frmJogo(int dif, int tempo, List<Jogador> listaJogadores, int ind)
+        public frmJogo(int dif, int tempo, Jogador player)
         {
             game = new Jogo(dif, tempo);
-            this.listaJogadores = listaJogadores;
-            player = listaJogadores[ind];
+            this.player = player;
             InitializeComponent();
 
         }
