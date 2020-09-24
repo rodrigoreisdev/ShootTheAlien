@@ -151,7 +151,7 @@
             // cbTempo
             // 
             this.cbTempo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbTempo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTempo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTempo.ForeColor = System.Drawing.SystemColors.Control;
             this.cbTempo.Items.AddRange(new object[] {

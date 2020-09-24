@@ -16,7 +16,6 @@ namespace ShootTheAlien
         Jogador player;
         int seg;
         int seg2;
-        int dif;
  
 
 
@@ -52,7 +51,7 @@ namespace ShootTheAlien
             seg = 0;
             Image[] images = new Image[3] { Properties.Resources.alien, Properties.Resources.alf, Properties.Resources.nada };
             Random rand;
-            string[] tag = new string[3] { "Alien", "Alf", "Nada" };
+            string[] tag = new string[3] { "Alien", "Alf", "Nada" }; //Para comparação de imagens
 
             rand = new Random();
             int y;
@@ -135,7 +134,6 @@ namespace ShootTheAlien
         private void frmJogo_Load(object sender, EventArgs e)
         {
             pnFacil.Visible = true;
-            dif = game.Dificuldade;
             seg2 = game.Tempo*60;
             prbTempo.Maximum = game.Tempo * 60;
             prbNivel.Value = player.Pontos % 10;
@@ -175,27 +173,27 @@ namespace ShootTheAlien
 
         private void pb1_Click(object sender, EventArgs e)
         {
-            Atirar(dif,pb1);
+            Atirar(game.Dificuldade, pb1);
         }
 
         private void pb2_Click(object sender, EventArgs e)
         {
-            Atirar(dif,pb2);
+            Atirar(game.Dificuldade,pb2);
         }
 
         private void pb3_Click(object sender, EventArgs e)
         {
-            Atirar(dif,pb3);
+            Atirar(game.Dificuldade, pb3);
         }
 
         private void pb4_Click(object sender, EventArgs e)
         {
-            Atirar(dif,pb4);
+            Atirar(game.Dificuldade, pb4);
         }
 
         private void pb5_Click(object sender, EventArgs e)
         {
-            Atirar(dif,pb5);
+            Atirar(game.Dificuldade, pb5);
         }
     }
 }

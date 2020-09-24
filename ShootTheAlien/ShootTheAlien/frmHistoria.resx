@@ -118,11 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Há um tempo atrás, soube-se da existência de vida em um planeta distante do nosso.
+    <value>Há um tempo atrás, soube-se da existência de vida em um planeta distante da Terra.
 Várias pessoas corajosas foram à esse planeta para explorar seu habitat e as formas de vida que se encontram por lá.
 Porém, habitava também uma criatura malígna, cujo nome, todos o chamam por Alien. Todos que haviam sido mandados nessa expedição morreram.
 
 Hoje uma nova tripulação foi enviada para esse planeta, um herói que será capaz de capturar essa criatura.
+
 Alf, um extraterrestre muito simpático e desastrado ao mesmo tempo, acaba embarcando, sem saber, nessa empreitada.
 Ele irá ajudar ou atrapalhar nosso herói?
 
