@@ -21,5 +21,10 @@ namespace ShootTheAlien
         {
             this.Close();
         }
+
+        private void frmHistoria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

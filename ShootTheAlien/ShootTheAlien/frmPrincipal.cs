@@ -14,7 +14,6 @@ namespace ShootTheAlien
     {
         List<Jogador> listaJogador = new List<Jogador>();
         bool x = false;
-        bool notify = true;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -84,7 +83,6 @@ namespace ShootTheAlien
             if (this.WindowState==FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Minimized;
-                notify = false;
             }
             else
                 this.WindowState = FormWindowState.Maximized;

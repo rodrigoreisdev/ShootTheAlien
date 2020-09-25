@@ -93,6 +93,7 @@
             this.Name = "frmHistoria";
             this.Text = "História";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmHistoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

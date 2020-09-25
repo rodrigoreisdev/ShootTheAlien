@@ -27,7 +27,7 @@ namespace ShootTheAlien
         {
             foreach(Jogador item in listaJogadores)
             {
-                lbNomes.Items.Add(item.Nome + "\t" +"Nível: " + item.Nivel);
+                lbNomes.Items.Add(item.Nome+"\t"+"Nível: "+item.Nivel);
 
             }
         }

@@ -10,7 +10,6 @@ namespace ShootTheAlien
     {
         private string nome;
         private int pontos;
-        private int nivel;
 
         public Jogador(string nome)
         {
